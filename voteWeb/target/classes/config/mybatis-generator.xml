@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="oracle" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <!--        该配置会使生产的Mapper自动继承MyMapper-->
+            <property name="mappers" value="com.xsz.common.config.MyMapper"/>
+            <property name="caseSensitive" value="false"/>
+        </plugin>
+<!--        防止生成自动注释-->
+        <commentGenerator>
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+<!--        数据库连接地址账号密码-->
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/vote?useSSL=false&amp;serverTimezone=Asia/Shanghai"
+                userId="root"
+                password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+<!--        生成Medel类存放位置-->
+        <javaModelGenerator
+                targetPackage="com.xsz.vote.domain"
+                targetProject="F:\idea-project\220221JavaWeb\voteWeb\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+<!--生成映射文件存放位置-->
+        <sqlMapGenerator
+                targetPackage="mapper.vote"
+                targetProject="F:\idea-project\220221JavaWeb\voteWeb\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+<!--        生成dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xsz.vote.dao"
+                             targetProject="F:\idea-project\220221JavaWeb\voteWeb\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+<!--        配置需要生成的表-->
+        <table tableName="tb_option_user" domainObjectName="OptionUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="tb_d_vote" domainObjectName="Vote"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="tb_d_vote_topic" domainObjectName="VoteTopic"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="tb_d_vote_topic_options" domainObjectName="VoteTopicOption"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="tb_d_vote_result" domainObjectName="VoteResult"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.auth0:java-jwt:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/auth0/java-jwt/unknown/java-jwt-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/auth0/java-jwt/unknown/java-jwt-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/auth0/java-jwt/unknown/java-jwt-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

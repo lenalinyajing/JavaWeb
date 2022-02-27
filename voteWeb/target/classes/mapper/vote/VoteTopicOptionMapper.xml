@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsz.vote.dao.VoteTopicOptionMapper">
+  <resultMap id="BaseResultMap" type="com.xsz.vote.domain.VoteTopicOption">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="VOTEID" jdbcType="INTEGER" property="voteid" />
+    <result column="TOPICID" jdbcType="INTEGER" property="topicid" />
+    <result column="KINDS" jdbcType="INTEGER" property="kinds" />
+    <result column="OPTIONS" jdbcType="VARCHAR" property="options" />
+    <result column="OPTIONSIMG" jdbcType="VARCHAR" property="optionsimg" />
+    <result column="SORTCODE" jdbcType="INTEGER" property="sortcode" />
+    <result column="DELMARK" jdbcType="TINYINT" property="delmark" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="MODIFYTIME" jdbcType="TIMESTAMP" property="modifytime" />
+    <result column="CREATEUSERID" jdbcType="INTEGER" property="createuserid" />
+    <result column="MODIFYUSERID" jdbcType="INTEGER" property="modifyuserid" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="OPTIONHTML" jdbcType="LONGVARCHAR" property="optionhtml" />
+  </resultMap>
+</mapper>

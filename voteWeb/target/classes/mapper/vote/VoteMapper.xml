@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsz.vote.dao.VoteMapper">
+  <resultMap id="BaseResultMap" type="com.xsz.vote.domain.Vote">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="DEADLINETIME" jdbcType="DATE" property="deadlinetime" />
+    <result column="ISALL" jdbcType="TINYINT" property="isall" />
+    <result column="HEADCONTENT" jdbcType="VARCHAR" property="headcontent" />
+    <result column="FOOTERCONTENT" jdbcType="VARCHAR" property="footercontent" />
+    <result column="ALLOWSHOWRESULT" jdbcType="TINYINT" property="allowshowresult" />
+    <result column="ALLOWANONYMAT" jdbcType="TINYINT" property="allowanonymat" />
+    <result column="FROMUSERID" jdbcType="INTEGER" property="fromuserid" />
+    <result column="STATUS" jdbcType="TINYINT" property="status" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="DELMARK" jdbcType="TINYINT" property="delmark" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="MODIFYTIME" jdbcType="TIMESTAMP" property="modifytime" />
+    <result column="CREATEUSERID" jdbcType="INTEGER" property="createuserid" />
+    <result column="MODIFYUSERID" jdbcType="INTEGER" property="modifyuserid" />
+    <result column="TO_USER" jdbcType="VARCHAR" property="toUser" />
+    <result column="TO_PARTY" jdbcType="VARCHAR" property="toParty" />
+    <result column="TO_TAG" jdbcType="VARCHAR" property="toTag" />
+    <result column="PIC_URL" jdbcType="VARCHAR" property="picUrl" />
+    <result column="VOTEURL" jdbcType="VARCHAR" property="voteurl" />
+    <result column="VOTECOUNT" jdbcType="INTEGER" property="votecount" />
+  </resultMap>
+</mapper>
