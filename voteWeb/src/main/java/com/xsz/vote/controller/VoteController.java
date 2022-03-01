@@ -7,8 +7,8 @@ import com.xsz.common.domain.ResponseBo;
 import com.xsz.common.domain.Tree;
 import com.xsz.common.util.FileUtil;
 import com.xsz.system.domain.User;
+import com.xsz.system.service.UserService;
 import com.xsz.vote.domain.Vote;
-import com.xsz.vote.service.UserService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -96,7 +96,7 @@ public class VoteController extends BaseController {
             return ResponseBo.ok("新增投票项目成功");
         }catch (Exception e){
             logger.error("新增投票项目失败");
-            return ResponseBo.error("新增投票项目失败，请联系网络管理员")
+            return ResponseBo.error("新增投票项目失败，请联系网络管理员");
         }
     }
 
@@ -110,7 +110,7 @@ public class VoteController extends BaseController {
             return ResponseBo.ok("修改投票项目成功");
         }catch (Exception e){
             logger.error("修改投票项目失败");
-            return ResponseBo.error("修改投票项目失败，请联系网络管理员")
+            return ResponseBo.error("修改投票项目失败，请联系网络管理员");
         }
     }
 

@@ -64,7 +64,7 @@ public class VoteTopicOptionServiceImpl extends BaseService<VoteTopicOption> imp
     @Override
     public void deleteVoteTopicOptions(String voteTopicOptionIds) {
         List<String> list = Arrays.asList(voteTopicOptionIds.split(","));
-        this.batchDelete(list,"ids",VoteTopic.class);
+        this.batchDelete(list,"ids",VoteTopicOption.class);
     }
 
     @Override

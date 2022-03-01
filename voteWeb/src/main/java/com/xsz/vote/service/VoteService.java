@@ -2,9 +2,8 @@ package java.com.xsz.vote.service;
 
 import com.xsz.common.domain.QueryRequest;
 import com.xsz.common.domain.Tree;
-import com.xsz.vote.service.IService;
+import com.xsz.common.service.IService;
 import com.xsz.vote.vo.VoteVO;
-import io.swagger.models.auth.In;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

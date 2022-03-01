@@ -104,7 +104,7 @@ public class TbDVoteTopicOptionController extends BaseController {
             return ResponseBo.ok("新增投票选项成功");
         }catch (Exception e){
             logger.error("新增投票选项失败");
-            return ResponseBo.error("新增投票选项失败，请联系网络管理员")
+            return ResponseBo.error("新增投票选项失败，请联系网络管理员");
         }
     }
 
@@ -118,7 +118,7 @@ public class TbDVoteTopicOptionController extends BaseController {
             return ResponseBo.ok("修改投票选项成功");
         }catch (Exception e){
             logger.error("修改投票选项失败");
-            return ResponseBo.error("修改投票选项失败，请联系网络管理员")
+            return ResponseBo.error("修改投票选项失败，请联系网络管理员");
         }
     }
 

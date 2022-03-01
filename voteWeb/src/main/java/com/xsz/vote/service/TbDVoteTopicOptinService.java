@@ -2,6 +2,7 @@ package com.xsz.vote.service;
 
 import com.xsz.common.domain.QueryRequest;
 import com.xsz.common.domain.Tree;
+import com.xsz.common.service.IService;
 import com.xsz.vote.domain.VoteTopic;
 import com.xsz.vote.domain.VoteTopicOption;
 import org.springframework.cache.annotation.CacheConfig;
@@ -11,7 +12,7 @@ import org.springframework.cache.annotation.Cacheable;
 import java.util.List;
 
 @CacheConfig(cacheNames = "TbDVoteTopicOptionService")
-public interface TbDVoteTopicOptinService extends IService<VoteTopic {
+public interface TbDVoteTopicOptinService extends IService<VoteTopicOption> {
     @Cacheable(key = "#p0.toString()+(#p1 != null ? #p1.toString():'')")
     List<VoteTopicOption> findAllVoteTopicOptions(VoteTopicOption voteTopicOption, QueryRequest request);
 

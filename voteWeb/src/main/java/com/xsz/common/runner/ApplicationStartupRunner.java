@@ -16,7 +16,7 @@ import java.net.InetAddress;
  * @author XSZ
  */
 @Component
-public class ApplicationStartupRunner implements  {
+public class ApplicationStartupRunner implements  ApplicationRunner{
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 

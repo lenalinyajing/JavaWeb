@@ -2,6 +2,7 @@ package com.xsz.vote.service.impl;
 
 import com.xsz.common.domain.QueryRequest;
 import com.xsz.common.domain.Tree;
+import com.xsz.common.service.impl.BaseService;
 import com.xsz.common.util.TreeUtils;
 import com.xsz.vote.dao.VoteTopicMapper;
 import com.xsz.vote.domain.Vote;
@@ -23,7 +24,7 @@ import java.util.List;
 
 @Service("voteTopincService")
 @Transactional(propagation = Propagation.SUPPORTS,readOnly = true,rollbackFor = Exception.class)
-public class VoteTopicServiceImpl extends TbDVoteTopicService {
+public class VoteTopicServiceImpl extends BaseService<VoteTopic> implements TbDVoteTopicService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private VoteTopicMapper voteTopicMapper;
@@ -67,7 +68,7 @@ public class VoteTopicServiceImpl extends TbDVoteTopicService {
 
     @Override
     public VoteTopic findById(Long id) {
-        this.selectByKey(id);
+        return this.selectByKey(id);
     }
 
     @Override

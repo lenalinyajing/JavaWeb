@@ -122,9 +122,9 @@ public class ShiroConfig {
     }
 
     @Bean
-    public ShiroRealm shiroRealm() {
+    public java.com.xsz.common.shiro.ShiroRealm shiroRealm() {
         // 配置 Realm，需自己实现，见 com.xsz.common.shiro.ShiroRealm
-        return new ShiroRealm();
+        return new java.com.xsz.common.shiro.ShiroRealm();
     }
 
     /**

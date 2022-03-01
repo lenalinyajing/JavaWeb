@@ -45,7 +45,7 @@ public class VoteServiceImpl extends BaseService<Vote> implements java.com.xsz.v
 
     public void addVote(Vote vote) {
         vote.setCreatetime(new Date());
-        save(vote)
+        save(vote);
 
     }
 

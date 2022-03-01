@@ -1,10 +1,11 @@
 package java.com.xsz.common.shiro;
 
 import com.xsz.system.domain.Menu;
+import com.xsz.system.domain.Role;
 import com.xsz.system.domain.User;
 import com.xsz.system.service.MenuService;
 import com.xsz.system.service.RoleService;
-import com.xsz.vote.service.UserService;
+import com.xsz.system.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -13,10 +14,9 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.management.relation.Role;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ShiroRealm extends AuthorizingRealm {
     @Autowired
@@ -35,11 +35,11 @@ public class ShiroRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         //获取用户角色集
         List<Role> roleList = this.roleService.findUserRole(username);
-        Set<String> roleSet =  roleList.stream().map(Role::getRoleName).collect(Collections.toSet());
+        Set<String> roleSet =  roleList.stream().map(Role::getRoleName).collect(Collectors.toSet());
         simpleAuthorizationInfo.setRoles(roleSet);
         //获取用户权限集
         List<Menu> permissionList = this.menuService.findUserPermissions(username);
-        Set<String> permissionSet = permissionList.stream().map(Menu::getParams).collect(Collections.toSet());
+        Set<String> permissionSet = permissionList.stream().map(Menu::getPerms).collect(Collectors.toSet());
         simpleAuthorizationInfo.setStringPermissions(permissionSet);
         return simpleAuthorizationInfo;
     }
@@ -60,13 +60,13 @@ public class ShiroRealm extends AuthorizingRealm {
         if(user == null){
             throw new UnknownAccountException("用户名或密码错误");
         }
-        if(!password.equals(user.getPassword)){
+        if(!password.equals(user.getPassword())){
             throw new IncorrectCredentialsException("用户名或密码错误");
         }
-        if(User.STATUS_LOCK.equals(user.getStatus)){
+        if(User.STATUS_LOCK.equals(user.getStatus())){
             throw  new LockedAccountException("账户被锁定，请联系管理员");
         }
-        return new SimpleAuthenticationInfo(user,password,getName())；
+        return new SimpleAuthenticationInfo(user,password,getName());
     }
 
     /**

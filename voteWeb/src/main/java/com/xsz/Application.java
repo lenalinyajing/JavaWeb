@@ -1,5 +1,6 @@
 package java.com.xsz;
 
+import com.xsz.common.config.FebsProperties;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -11,7 +12,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @EnableTransactionManagement
 @MapperScan("com.xsz.*.dao")
-//@EnableConfigurationProperties({XSZProperties.class})
+@EnableConfigurationProperties({FebsProperties.class})
 @EnableCaching
 @EnableAsync
 public class Application {

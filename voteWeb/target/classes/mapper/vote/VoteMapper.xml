@@ -28,4 +28,31 @@
     <result column="VOTEURL" jdbcType="VARCHAR" property="voteurl" />
     <result column="VOTECOUNT" jdbcType="INTEGER" property="votecount" />
   </resultMap>
+
+  <select id="findVoteVOs" resultType="com.xsz.vote.vo.VoteVO" parameterType="java.lang.Integer">
+    select
+    a.title as voteName,
+    b.title as topicName,
+    c.`OPTIONS` as 'option',
+    b.`KINDS` as kinds,
+    a.`STATUS` as status,
+    a.`CREATETIME` as createtime,
+    a.`ID` as voteId,
+    b.`ID` as voteTopicId,
+    c.`ID` as optionId
+    from tb_d_vote a
+    left join  tb_d_vote_topic on(a.`ID`=b.`VOTEID`)
+    left join tb_d_vote_topic_options c on (c.`TOPICID`=b.id)
+    where a.`STATUS`=#{status,jdbcType=INTEGER}
+  </select>
+
+  <select id="findResultVoteVOs" resultType="com.xsz.vote.vo.VoteVO">
+    select count(*) as voteoptioncount,c.`OPTIONS` as `option`,
+    a.`OPTIONID` as optionId,b.`TITLE` as topicName,d.`TITLE` as voteName from
+    vote.tb_d_vote_result a
+    left join tb_d_vote_topic_options c on (a.`OPTIONID`=c.id)
+    left jpin tb_d_vote_topic b on (b.`ID`=c.`TOPICID`)
+    left join tb_d_vote d on (d.`ID`=b.`TOPICID`)
+    group by c.`OPTIONS`,a.`OPTIONID`
+  </select>
 </mapper>
